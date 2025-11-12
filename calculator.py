@@ -7,9 +7,6 @@ calculator.py
 
 One function per operation, in order.
 """
-#https://github.com/Felix-Chang/lab10-FC-NT
-#Partner 1: Felix Cheng
-#Partner 2:Noah Techoueyres
 import math
 def add(a, b): return a + b
 
