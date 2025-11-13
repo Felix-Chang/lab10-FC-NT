@@ -19,7 +19,7 @@ def square_root(a):
 
 def hypotenuse(a, b):
     try:
-        return math.hyp(a,b)
+        return math.hypot(a,b)
     except TypeError as e:
         print(e)
 

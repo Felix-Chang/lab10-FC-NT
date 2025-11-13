@@ -9,15 +9,15 @@ from calculator import *
 class TestCalculator(unittest.TestCase):
     ######### Partner 2
     def test_add(self): # 3 assertions
-        assert calculator.add(1, 2) == 3
-        assert calculator.add(20, 2) == 22
-        assert calculator.add(-6, 2) == -4
+        self.assertEqual(add(1, 2), 3)
+        self.assertEqual(add(20, 2), 22)
+        self.assertEqual(add(-6, 2), -4)
 
 
     def test_subtract(self): # 3 assertions
-        assert calculator.sub(1, 2) == -1
-        assert calculator.sub(20, 2) == 18
-        assert calculator.sub(-6, 2) == -8
+        self.assertEqual(subtract(1, 2), -1)
+        self.assertEqual(subtract(20, 2), 18)
+        self.assertEqual(subtract(-6, 2), -8)
 
     ######## Partner 1
     def test_multiply(self): # 3 assertions
@@ -34,22 +34,22 @@ class TestCalculator(unittest.TestCase):
     def test_divide_by_zero(self): # 1 assertion
     #     # call division function inside, example:
         with self.assertRaises(ZeroDivisionError):
-            calculator.div(0, 20)
+            div(0, 20)
 
 
     def test_logarithm(self): # 3 assertions
-       assert calculator.log(10,10000) == 4
-       assert calculator.log(10,100) == 2
-       assert calculator.log(10,100000) == 5
+       self.assertEqual(logarithm(10,10000),4)
+       self.assertEqual(logarithm(10,100), 2)
+       self.assertEqual(logarithm(10,100000), 5)
 
     def test_log_invalid_base(self): # 1 assertion
         with self.assertRaises(ValueError):
-            calculator.log(10,-1)
+            logarithm(10,-1)
     
     ######## Partner 1
     def test_log_invalid_argument(self): # 1 assertion
         with self.assertRaises(ValueError):
-            log(0, 5)
+            logarithm(0, 5)
 
     def test_hypotenuse(self): # 3 assertions
         self.assertEqual(hypotenuse(3,4), 5)
