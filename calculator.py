@@ -16,6 +16,7 @@ def square_root(a):
         return math.sqrt(a)
     except ValueError as e:
         print(e)
+        raise
 
 def hypotenuse(a, b):
     try:
