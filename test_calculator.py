@@ -59,8 +59,9 @@ class TestCalculator(unittest.TestCase):
     def test_sqrt(self): # 3 assertions
         with self.assertRaises(ValueError):
             square_root(-1)
-            square_root(4)
-            square_root(100)
+        
+        self.assertEqual(square_root(4), 2)
+        self.assertEqual(square_root(100), 10)
     ##########################
 
 # Do not touch this
