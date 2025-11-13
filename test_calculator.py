@@ -1,11 +1,10 @@
-
 #https://github.com/Felix-Chang/lab10-FC-NT
-#Partner 1: Felix Cheng
-#Partner 2:Noah Techoueyres
+#Partner 1: Felix Chang
+#Partner 2: Noah Techoueyres
 
 
 import unittest
-import calculator
+from calculator import *
 
 class TestCalculator(unittest.TestCase):
     ######### Partner 2
@@ -21,15 +20,15 @@ class TestCalculator(unittest.TestCase):
         assert calculator.sub(-6, 2) == -8
 
     ######## Partner 1
-    def test_multiply(self):
-        assert calculator.mul(1, 2) == 2
-        assert calculator.mul(20, 2) == 40
-        assert calculator.mul(-6, 2) == -12
+    def test_multiply(self): # 3 assertions
+        self.assertEqual(mul(2,4), 8)
+        self.assertEqual(mul(0,2), 0)
+        self.assertEqual(mul(-2,4), -8)
 
     def test_divide(self): # 3 assertions
-        assert calculator.div(2, 40) == 20
-        assert calculator.div(5,20) == 4
-        assert calculator.div(-2,-100) == 50
+        self.assertEqual(div(1,5), 5)
+        self.assertEqual(div(4,2), 0.5)
+        self.assertEqual(div(4,-2), -0.5)
 
     ######## Partner 2
     def test_divide_by_zero(self): # 1 assertion
@@ -48,21 +47,20 @@ class TestCalculator(unittest.TestCase):
             calculator.log(10,-1)
     
     ######## Partner 1
-    # def test_log_invalid_argument(self): # 1 assertion
-    #     # call log function inside, example:
-    #     # with self.assertRaises(<INSERT_ERROR_TYPE>):
-    #     #     logarithm(0, 5)
-    #     fill in code
+    def test_log_invalid_argument(self): # 1 assertion
+        with self.assertRaises(ValueError):
+            log(0, 5)
 
-    # def test_hypotenuse(self): # 3 assertions
-    #     fill in code
+    def test_hypotenuse(self): # 3 assertions
+        self.assertEqual(hypotenuse(3,4), 5)
+        self.assertEqual(hypotenuse(5,12), 13)
+        self.assertEqual(hypotenuse(24,7), 25)
 
-    # def test_sqrt(self): # 3 assertions
-    #     # Test for invalid argument, example:
-    #     # with self.assertRaises(<INSERT_ERROR_TYPE>):
-    #     #    square_root(NUM)
-    #     # Test basic function
-    #     fill in code
+    def test_sqrt(self): # 3 assertions
+        with self.assertRaises(ValueError):
+            square_root(-1)
+            square_root(4)
+            square_root(100)
     ##########################
 
 # Do not touch this

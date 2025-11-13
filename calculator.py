@@ -1,6 +1,6 @@
 #https://github.com/Felix-Chang/lab10-FC-NT
-#Partner 1: Felix Cheng
-#Partner 2:Noah Techoueyres
+#Partner 1: Felix Chang
+#Partner 2: Noah Techoueyres
 """
 calculator.py
 - Defines functions used to create a simple calculator
@@ -11,7 +11,7 @@ import math
 
 def square_root(a):
     try:
-        if a <= 0:
+        if a < 0:
             raise ValueError
         return math.sqrt(a)
     except ValueError as e:
